@@ -748,6 +748,7 @@ export class LiveSocket {
 
   bindNav(){
     if(!Browser.canPushState()){ return }
+    console.log('REGISTERING POPSTATE HANDLER')
     window.onpopstate = (event) => {
       if(!this.registerNewLocation(window.location)){ return }
       let {type, id, root} = event.state || {}
